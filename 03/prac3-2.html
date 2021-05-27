@@ -11,17 +11,19 @@
     <script>
         var numbers = [];
         createRandomNumbers(numbers, 10)
-        var sum = 0;
+        var ave = 0;
         function runButtonPressed() {
-            //prac3-1 10個の乱数の合計を求める（繰り返しで）
             for (i = 0; i < 10; i++) {
-                sum = sum + numbers[i]
+                ave = ave + numbers[i]
             }
+            ave = ave / 10
+
             //prac3-2 10個の乱数の平均を求める
             //prac3-3 10個の乱数の最大値を求める
             //prac3-4 10個の乱数の最小値を求める
             show(numbers)
-            show(sum)
+            console.log(ave)
+            show(ave)
         }
 
     </script>
