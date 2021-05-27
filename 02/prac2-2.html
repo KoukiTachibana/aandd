@@ -13,22 +13,24 @@
         createSequentialNumbers(numbers, 10)
 
         function runButtonPressed() {
-            console.log(numbers)
-            var second = numbers[1];
-            var forth = numbers[3];
+            var n = Math.floor(Math.random() * 10)
+            var m = Math.floor(Math.random() * 10)
 
-            numbers[1] = forth;
-            numbers[3] = second
+
+            console.log(numbers)
+            var first = numbers[n];
+            var second = numbers[m];
+
+            numbers[m] = first;
+            numbers[n] = second;
 
             show(numbers);
             //prac2-1 10個の順数（１，２，３．．．の数列）を生成し，２番目と４番目を入れ替える
             //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
             //(nとmは乱数にて決定する)
             //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
-<<<<<<< HEAD
+
             //prac2-4 10個の乱数を生成し，もう一つの配列を作成し，コピーするプログラム．
-=======
->>>>>>> 6d3214fd1e4f8d8ca6d3ecfe19b6309da5b85590
         }
     </script>
 
