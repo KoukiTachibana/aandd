@@ -11,18 +11,16 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
-            function createSequentialNumbers(array, n) {
-                for (i = 1; i <= n; i++) {
-                    numbers.push(i)
-                }
-            }
-            //prac1-7 1からNまでの数を順にN個挿入する関数を作る
-            //関数名：createSequentialNumbers(array, n)
-            //できたら，関数定義をaandd.jsに移す
             //prac1-8 N個の乱数を挿入する関数を作る
             //関数名：createRandomNumbers(array, n)
             //できたら，関数定義をaandd.jsに移す
-            createSequentialNumbers(numbers, 20)
+            function createRandomNumbers(array, n) {
+                for (i = 1; i <= n; i++) {
+                    var random = Math.floor(Math.random() * n);
+                    numbers.push(random)
+                }
+            }
+            createRandomNumbers(numbers, 20)
             function show(array) {
                 var html = '';
                 html = html + '<table border="1">';
@@ -35,6 +33,7 @@
                 //document.getElementById('res').innerHTML = html;
                 document.getElementById('res').insertAdjacentHTML('beforeend', html);
             }
+
             show(numbers);
         }
     </script>
@@ -42,7 +41,7 @@
 </head>
 
 <body>
-    <h1>prac1-7</h1>
+    <h1>prac1-8</h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>

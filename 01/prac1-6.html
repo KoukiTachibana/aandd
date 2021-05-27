@@ -16,11 +16,10 @@
             }
             //prac1-5〜 1から10までの数を順に10個挿入する
             show(numbers);
-            //prac1-5 全ての要素に10を足す
-            for (i = 0; i < 10; i++) {
-                numbers[i] = numbers[i] + 10
-            }
             //prac1-6 全ての要素に10をかける
+            for (i = 0; i < 10; i++) {
+                numbers[i] = numbers[i] * 10
+            }
             show(numbers);
         }
         function show(array) {
@@ -40,7 +39,7 @@
 </head>
 
 <body>
-    <h1>prac1-5</h1>
+    <h1>prac1-6</h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>
