@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script type="text/javascript" src="nouns.js"></script>
+    <script type="text/javascript" src="verbs.js"></script>
+
+    <script>
+        //作文さん
+        var nouns;
+        var nouns2;
+        var verbs;
+
+        $(document).ready(function () {
+            nouns = nounstext.split('\n');
+            nouns2 = nounstext.split('\n');
+            verbs = verbstext.split('\n');
+        });
+
+        function runButtonPressed() {
+            var noun = selectone(nouns);
+            var noun2 = selectone(nouns2);
+            var verb = selectone(verbs);
+            document.getElementById("res").innerHTML = noun + "は" + noun2 + "を" + verb
+        }
+
+        function selectone(array) {
+            var size = array.length;
+            var index = Math.floor(Math.random() * size);
+            return array[index];
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>作文さん</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+
+</body>
+
+</html>
