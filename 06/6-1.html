@@ -11,15 +11,17 @@
     <script>
         //反転さん
         function runButtonPressed() {
+
             var text = document.getElementById('tf1').value;
             show(text);
             var chars = text.split('');
             show(chars);
 
+            var len = chars.length
             var stack = []
 
-            for (i = chars.length - 1; i >= 0; i--) {
-                stack.push(chars[i])
+            for (i = chars.length; i > 0; i--) {
+                stack.push(chars.pop())
             }
 
             show(stack)

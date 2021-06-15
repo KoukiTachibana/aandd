@@ -22,28 +22,27 @@
         });
 
         function runButtonPressed() {
-            for (i = 0; i < 10000; i++) {
+            for (i = 0; i < 1000000; i++) {
                 var noun = selectone(nouns);
                 var verb = selectone(verbs);
 
-                document.getElementById("res").innerHTML = noun + "を" + verb
-                var text = document.getElementById("res").innerHTML
+                html = ""
+                html = noun + "を" + verb;
+                var chars = html.split('');
 
-                var chars = text.split('');
 
-                var stack = []
-                for (i = chars.length - 1; i >= 0; i--) {
-                    stack.push(chars[i])
+                var len = chars.length;
+                var stack = [];
+
+                for (j = chars.length; j > 0; j--) {
+                    stack.push(chars.pop());
                 }
+
                 var text2 = stack.join('');
-                show(text2);
 
-                if (text == text2) {
-                    document.getElementById("res").innerHTML = noun + "を" + verb
-                    break;
-                }
-                else {
-                    document.getElementById("res").innerHTML = "none"
+                if (html == text2) {
+                    document.getElementById("res").innerHTML = html;
+                    break
                 }
 
             }
