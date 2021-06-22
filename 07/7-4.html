@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var goroku = {};
+
+        function runButtonPressed() {
+            var base = document.getElementById('tf1').value;
+            var conp = goroku[base];
+
+            if (conp == undefined) {
+                document.getElementById('tf2').value = base + "の時はなんて答えればいいすか";
+            }
+            else {
+                document.getElementById('tf2').value = conp;
+            }
+        }
+
+        function registerButtonPressed() {
+            var x = document.getElementById('tf1').value;
+            var y = document.getElementById('tf3').value;
+            goroku[x] = y
+            goroku[y] = x
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>登録</h1>
+    you：<input id="tf1" type="text" value="" style="width:300px">
+    <button onclick="runButtonPressed()">発言!</button>
+
+    <br>
+
+    CPU：<input id="tf2" type="text" value="" style="width:300px">
+
+    <br>
+
+    you:<input id="tf3" type="text" value="" style="width:300px">
+    <button onclick="registerButtonPressed()">教える!</button>
+    <p id="res"></p>
+</body>
+
+</html>

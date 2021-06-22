@@ -16,19 +16,18 @@
             fruits['orange'] = 'みかん';
         });
 
-
         function registerButtonPressed() {
             var x = document.getElementById('tf3').value;
             var y = document.getElementById('tf4').value;
             fruits[x] = y
+            fruits[y] = x
         }
 
         function runButtonPressed() {
-            var english = document.getElementById('tf1').value;
-            var japanese = fruits[english];
-            document.getElementById('tf2').value = japanese;
+            var base = document.getElementById('tf1').value;
+            var conp = fruits[base];
+            document.getElementById('tf2').value = conp;
         }
-
 
     </script>
 
@@ -41,9 +40,9 @@
     日本語：<input id="tf4" type="text" value="">
     <button onclick="registerButtonPressed()">登録!</button>
     <h1>検索</h1>
-    英語：<input id="tf1" type="text" value="">
+    元：<input id="tf1" type="text" value="">
     <br>
-    日本語：<input id="tf2" type="text" value="">
+    翻訳：<input id="tf2" type="text" value="">
     <button onclick="runButtonPressed()">検索!</button>
     <p id="res"></p>
 </body>

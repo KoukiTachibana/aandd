@@ -9,26 +9,27 @@
     <script type="text/javascript" src="../jquery.min.js"></script>
 
     <script>
-        var fruits = {};
-
-        $().ready(function () {
-            fruits['apple'] = 'りんご';
-            fruits['orange'] = 'みかん';
-        });
-
+        var person = {};
 
         function registerButtonPressed() {
             var x = document.getElementById('tf3').value;
             var y = document.getElementById('tf4').value;
-            fruits[x] = y
+            person[x] = y
+            person[y] = x
         }
 
         function runButtonPressed() {
-            var english = document.getElementById('tf1').value;
-            var japanese = fruits[english];
-            document.getElementById('tf2').value = japanese;
-        }
+            var base = document.getElementById('tf1').value;
+            var conp = person[base];
 
+            if (conp == undefined) {
+                document.getElementById('tf2').value = "見つかりませんでした";
+            }
+
+            else {
+                document.getElementById('tf2').value = conp;
+            }
+        }
 
     </script>
 
@@ -36,14 +37,14 @@
 
 <body>
     <h1>登録</h1>
-    英語：<input id="tf3" type="text" value="">
+    名前：<input id="tf3" type="text" value="">
     <br>
-    日本語：<input id="tf4" type="text" value="">
+    誕生日：<input id="tf4" type="text" value="">
     <button onclick="registerButtonPressed()">登録!</button>
     <h1>検索</h1>
-    英語：<input id="tf1" type="text" value="">
+    情報：<input id="tf1" type="text" value="">
     <br>
-    日本語：<input id="tf2" type="text" value="">
+    結果：<input id="tf2" type="text" value="">
     <button onclick="runButtonPressed()">検索!</button>
     <p id="res"></p>
 </body>
