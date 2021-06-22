@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+
+        function runButtonPressed() {
+            ///5-3挿入ソート
+            var numbers = [9]
+            var numbers2 = [5, 8, 16, 13, 22];
+            var starttime = new Date();
+
+            show(numbers);
+            show(numbers2);
+
+            var x = numbers[0];
+            for (var i = 0; i < numbers2.length; i++) {
+                if (numbers2[i] > x) {
+                    for (var j = numbers2.length - 1; j >= i; j--) {
+                        numbers2[j + 1] = numbers2[j];
+                    }
+                    numbers2[i] = x;
+                    break;
+                }
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>prac3</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>

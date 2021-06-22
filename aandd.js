@@ -29,3 +29,7 @@ function show(obj) {
         document.getElementById('res').insertAdjacentHTML('beforeend', string);
     }
 }
+
+function createOrderedRundomNumbers() {
+
+}

@@ -9,22 +9,23 @@
     <script type="text/javascript" src="../jquery.min.js"></script>
 
     <script>
-        var numbers = [];
-        createRandomNumbers(numbers, 10)
-        var min = numbers[0];
+        ///5-2選択ソート
         function runButtonPressed() {
-            for (i = 0; i < 10; i++) {
-                if (min > numbers[i]) {
-                    min = numbers[i]
-
+            var numbers = [9, 4, 5, 2, 3, 1, 6, 4];
+            var numbers2 = []
+            for (var j = 0; j < numbers.length; j++) {
+                var minindex = 0
+                var min = 10000
+                for (var i = 0; i < numbers.length; i++) {
+                    if (numbers[i] < numbers[minindex]) {
+                        min = numbers[i]
+                        minindex = i
+                    }
                 }
-                console.log(min)
             }
-            //prac3-4 10個の乱数の最小値を求める
-            show(numbers)
             show(min)
+            show(minindex)
         }
-
     </script>
 
 </head>
