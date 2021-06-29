@@ -14,15 +14,25 @@
 
         async function runButtonPressed() {
             var objects = await osql.connect('select * from Students;');
-            var objectsA = [];
-
+            var sum = 0
+            var count = 0
 
             for (var i = 0; i < objects.length; i++) {
-                var names = objects[i].name
-                objectsA.push(names);
-            }
+                var gen = objects[i].gender
+                var height = objects[i].height
+                height = Number(height) //文字列を数値にしましょう
 
-            document.getElementById('res').innerHTML = JSON.stringify(objectsA, null, '\t');
+
+                if (gen == "m") {
+                    sum = sum + height
+                    count = count + 1
+                }
+
+            }
+            console.log(count)
+            console.log(sum)
+            var ave = sum / count
+            document.getElementById('res').innerHTML = ave
 
         }
 
@@ -32,7 +42,7 @@
 </head>
 
 <body>
-    <h1>ex8-2</h1>
+    <h1>ex8-4</h1>
     <button onclick="runButtonPressed()">run!</button>
     <pre id="res"></pre>
 </body>

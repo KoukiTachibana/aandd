@@ -14,15 +14,16 @@
 
         async function runButtonPressed() {
             var objects = await osql.connect('select * from Students;');
-            var objectsA = [];
+            var objectsB = {};
 
 
             for (var i = 0; i < objects.length; i++) {
                 var names = objects[i].name
-                objectsA.push(names);
+                var birthday = objects[i].birthday
+                objectsB[names] = birthday;
             }
 
-            document.getElementById('res').innerHTML = JSON.stringify(objectsA, null, '\t');
+            document.getElementById('res').innerHTML = JSON.stringify(objectsB, null, '\t');
 
         }
 
@@ -32,7 +33,7 @@
 </head>
 
 <body>
-    <h1>ex8-2</h1>
+    <h1>ex8-3</h1>
     <button onclick="runButtonPressed()">run!</button>
     <pre id="res"></pre>
 </body>
